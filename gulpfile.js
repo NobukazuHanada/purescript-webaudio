@@ -22,8 +22,6 @@ gulp.task("psc",function(){
 gulp.task("bundle", ["psc"], function(){
     return purescript.pscBundle({
         src : "output/**/*.js",
-        module : "Main",
-        main : "Main",
         output : "bin/main.js"
     });
 });
@@ -35,4 +33,4 @@ gulp.task("dotpsci",function(){
         .pipe(gulp.dest("."));
 });
 
-gulp.task("default",["bundle","dotpsci"]);
+gulp.task("default",["psc","dotpsci"]);
