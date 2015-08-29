@@ -30,3 +30,6 @@ foreign import createOscillator :: forall eff. AudioContext -> Eff ( audio :: Au
 
 foreign import start :: forall eff. Osillator -> Eff ( audio :: Audio | eff ) Osillator
 foreign import setFrequency :: forall eff. Number -> Osillator -> Eff ( audio :: Audio | eff ) Unit
+
+-- gain
+foreign import createGain :: forall eff. AudioContext -> Eff ( audio :: Audio | eff ) Gain

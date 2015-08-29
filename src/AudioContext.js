@@ -47,3 +47,9 @@ exports.start = function(osc){
         osc.start();
     };
 }
+
+exports.createGain = function(context){
+    return function(){
+        return context.createGain();
+    }
+}
