@@ -18,8 +18,6 @@ instance gainNode :: AudioNode Gain
 
 
 foreign import createAudioContext :: forall eff. Eff ( audio :: Audio | eff ) AudioContext
-
-
 foreign import connect :: forall fromNode toNode eff. (AudioNode fromNode, AudioNode toNode) =>
         fromNode
         -> toNode
@@ -27,7 +25,6 @@ foreign import connect :: forall fromNode toNode eff. (AudioNode fromNode, Audio
 
 -- osillator 
 foreign import createOscillator :: forall eff. AudioContext -> Eff ( audio :: Audio | eff ) Osillator 
-
 foreign import start :: forall eff. Osillator -> Eff ( audio :: Audio | eff ) Osillator
 foreign import setFrequency :: forall eff. Number -> Osillator -> Eff ( audio :: Audio | eff ) Unit
 
