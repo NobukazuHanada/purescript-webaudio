@@ -48,6 +48,13 @@ exports.start = function(osc){
     };
 }
 
+
+exports.start = function(osc){
+    return function(){
+        osc.stop();
+    };
+}
+
 exports.createGain = function(context){
     return function(){
         return context.createGain();

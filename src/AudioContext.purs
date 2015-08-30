@@ -27,6 +27,8 @@ foreign import connect :: forall fromNode toNode eff. (AudioNode fromNode, Audio
 -- osillator 
 foreign import createOscillator :: forall eff. AudioContext -> Eff ( audio :: Audio | eff ) Osillator 
 foreign import start :: forall eff. Osillator -> Eff ( audio :: Audio | eff ) Osillator
+
+foreign import stop :: forall eff. Osillator -> Eff ( audio :: Audio | eff ) Osillator
 foreign import setFrequency :: forall eff. Number -> Osillator -> Eff ( audio :: Audio | eff ) Unit
 
 -- gain
