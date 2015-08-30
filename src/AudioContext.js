@@ -53,3 +53,9 @@ exports.createGain = function(context){
         return context.createGain();
     }
 }
+
+exports.createDestination = function(context){
+    return function(){
+        return context.destination;
+    }
+}
