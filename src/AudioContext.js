@@ -59,3 +59,23 @@ exports.createDestination = function(context){
         return context.destination;
     }
 }
+
+// audioParams
+function setAudioParams(funcName){
+    return function(value){
+        return function(time){
+            return function(audioParam){
+                return function(){
+                    return audioParam[funcName](value, time);
+                }
+            }
+        }  
+    }
+}
+
+exports.setValueAtTime = setAudioParams("setValueAtTime");
+exports.linearRampToValueAtTime = setAudioParams("linearRampToValueAtTime");
+exports.exponentialRampToValueAtTime = setAudioParams("exponentialRampToValueAtTime");
+exports.setTargetAtTime = setAudioParams("setTargetAtTime");
+exports.setValueCurveAtTime = setAudioParams("_");
+exports.cancelSheduledValues = setAudioParams("cancelSheduledValues");
