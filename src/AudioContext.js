@@ -49,7 +49,7 @@ exports.start = function(osc){
 }
 
 
-exports.start = function(osc){
+exports.stop = function(osc){
     return function(){
         osc.stop();
     };
